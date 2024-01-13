@@ -1,0 +1,12 @@
+spring:
+  jpa:
+    hibernate.ddl-auto: update
+    properties:
+      hibernate:
+        dialect=org:
+          hibernate:
+            dialect: MySQL5InnoDBDialect
+  datasource:
+    url: jdbc:mysql://localhost:3306/to-do?useTimezone=true&serverTimezone=UTC
+    username: root
+    password: root
