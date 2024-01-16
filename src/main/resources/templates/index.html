@@ -51,23 +51,24 @@
                             <tbody>
 
                                 <tr class="fw-normal" id="form-add-task" style="display: none;">
-                                    <form action="" method="post">
+                                    <form th:action="@{salvar}" method="POST" th:object="${tarefaDTO}">
                                         <td class="align-middle">
                                             <img th:src="'http://localhost:8080/avatares/png/2.png'"
                                                  alt="avatar 1" style="width: 45px; height: auto;" />
-                                            <input type="text" class="ms-2 bg-transparent border-0 border-bottom text-white">
+                                            <input type="hidden" name="membro_avatar" value="4">
+                                            <input type="text" class="ms-2 bg-transparent border-0 border-bottom text-white" name="membro_nome">
                                         </td>
 
                                         <td class="align-middle">
-                                            <input type="text" class="bg-transparent border-0 border-bottom text-white" style="height: auto;">
+                                            <input type="text" class="bg-transparent border-0 border-bottom text-white" style="height: auto;" name="task_nome">
                                         </td>
                                         <td class="align-middle">
-                                                <input type="text" class="bg-transparent border-0 border-bottom text-white" placeholder="baixa, media ou alta">
+                                                <input type="text" class="bg-transparent border-0 border-bottom text-white" placeholder="baixa, media ou alta" name="prioridade">
                                         </td>
                                         <td class="align-middle text-center">
-                                            <a href="#!" data-mdb-toggle="tooltip" title="Done">
-                                                    <i class="fa-solid fa-plus fa-xl text-success"></i>
-                                            </a>
+                                            <button type="submit" class="btn btn-link" data-mdb-toggle="tooltip" title="Salvar!">
+                                                <i class="fa-solid fa-plus fa-xl text-success"></i>
+                                            </button>
                                         </td>
                                     </form>
                                 </tr>

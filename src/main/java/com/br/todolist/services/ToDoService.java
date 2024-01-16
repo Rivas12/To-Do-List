@@ -22,4 +22,9 @@ public class ToDoService {
         return toDoRepository.findAll();
     }
 
+    // Método para salvar uma nova tarefa no banco de dados
+    public TarefaEntity saveToDo(TarefaEntity tarefa) {
+        return toDoRepository.save(tarefa);
+    }
+
 }
