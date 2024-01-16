@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/salvar")
-public class salvar {
+public class Salvar {
 
     private final ToDoService toDoService;
 
-    public salvar(ToDoService toDoService) {
+    public Salvar(ToDoService toDoService) {
         this.toDoService = toDoService;
     }
 

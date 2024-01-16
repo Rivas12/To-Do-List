@@ -9,11 +9,11 @@ import org.springframework.stereotype.Controller;
 import java.util.List;
 
 @Controller
-public class index {
+public class Index {
 
     private final ToDoService toDoService;
 
-    public index(ToDoService toDoService) {
+    public Index(ToDoService toDoService) {
         this.toDoService = toDoService;
     }
 
