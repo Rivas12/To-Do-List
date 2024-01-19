@@ -1,16 +1,11 @@
-// Aguarda o documento HTML ser completamente carregado antes de executar o código
-$(document).ready(function() {
+$( document ).ready(function() {
 
-    // Quando o elemento com o id 'add-task-bottom' é clicado
     $("#add-task-bottom").click(function() {
-        // Altera a visibilidade do formulário com o id 'form-add-task' usando slideToggle
         $("#form-add-task").slideToggle("fast");
     });
 
-    // Quando o formulário com o id 'form-principal' é submetido
     $('#form-principal').submit(function (event) {
-        // Impede o envio padrão do formulário
-        event.preventDefault();
+        event.preventDefault(); // Impede o envio padrão do formulário
 
         // Coleta os dados do formulário
         var dadosDoFormulario = {
@@ -20,40 +15,38 @@ $(document).ready(function() {
             prioridade: $('#prioridade').val(),
         };
 
-        // Enviar dados via AJAX (método POST)
+        // Enviar dados via AJAX
         $.ajax({
             url: '/salvar',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(dadosDoFormulario),
             success: function (data) {
-                // Recarrega a página após o sucesso da requisição AJAX
-                location.reload();
+                location.reload()
             },
             error: function (error) {
-                // Exibe mensagem de erro no console se houver algum problema
                 console.error('Erro ao enviar dados:', error);
             }
         });
     });
 
+
+
+
 });
 
 // Função para marcar uma tarefa como concluída
 function taskDone(id){
-    // Enviar dados via AJAX (método DELETE)
+    // Enviar dados via AJAX (DELETE)
     $.ajax({
         url: '/deletar/' + id,
         type: 'DELETE',
         contentType: 'application/json',
         success: function (data) {
-            // Exibe mensagem de sucesso no console
             console.log('Dados deletados:');
-            // Recarrega a página após o sucesso da requisição AJAX
-            location.reload();
+            location.reload()
         },
         error: function (error) {
-            // Exibe mensagem de erro no console se houver algum problema
             console.log('Erro ao enviar dados:', error);
         }
     });

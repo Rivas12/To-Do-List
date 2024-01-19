@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/deletar")
-public class deletar {
+public class Deletar {
 
     private final ToDoService toDoService;
 
-    public deletar(ToDoService toDoService) {
+    public Deletar(ToDoService toDoService) {
         this.toDoService = toDoService;
     }
 
