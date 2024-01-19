@@ -57,7 +57,7 @@ function taskDone(id){
 // Função para alterar dinamicamente o avatar
 function changeAvatar() {
     // Gera um número aleatório entre 1 e 11
-    var numeroSorteado = Math.floor(Math.random() * 20) + 1;
+    var numeroSorteado = Math.floor(Math.random() * 19) + 1;
 
     // Constrói a URL do novo avatar com base no número sorteado
     var novaUrlAvatar = "http://localhost:8080/avatares/png/" + numeroSorteado + ".png";
