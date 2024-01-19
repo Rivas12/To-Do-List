@@ -1,5 +1,7 @@
 $( document ).ready(function() {
 
+    $("input").attr("autocomplete", "off");
+
     $("#add-task-bottom").click(function() {
         $("#form-add-task").slideToggle("fast");
     });
@@ -30,7 +32,7 @@ $( document ).ready(function() {
         });
     });
 
-
+    changeAvatar()
 
 
 });
@@ -50,4 +52,18 @@ function taskDone(id){
             console.log('Erro ao enviar dados:', error);
         }
     });
+}
+
+// Função para alterar dinamicamente o avatar
+function changeAvatar() {
+    // Gera um número aleatório entre 1 e 11
+    var numeroSorteado = Math.floor(Math.random() * 20) + 1;
+
+    // Constrói a URL do novo avatar com base no número sorteado
+    var novaUrlAvatar = "http://localhost:8080/avatares/png/" + numeroSorteado + ".png";
+
+    // Atualiza o atributo 'src' da imagem com o id 'avatarMembro'
+    $("#avatarMembro").attr("src", novaUrlAvatar);
+
+    $("#membro_avatar").val(numeroSorteado)
 }

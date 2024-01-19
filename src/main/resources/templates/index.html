@@ -14,7 +14,7 @@
         outline: none;
     }
 </style>
-<body>
+<body onselectstart="return false;">
 <section class="vh-100 gradient-custom-2">
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -46,9 +46,10 @@
                                 <tr class="fw-normal" id="form-add-task" style="display: none;">
                                     <form th:action="@{salvar}" method="POST" th:object="${tarefaDTO}" id="form-principal">
                                         <td class="align-middle">
-                                            <img th:src="'http://localhost:8080/avatares/png/2.png'"
+                                            <i class="fa-solid fa-arrows-rotate" style="cursor: pointer;" onclick="changeAvatar()"></i>
+                                            <img id="avatarMembro"
                                                  alt="avatar 1" style="width: 45px; height: auto;" />
-                                            <input type="hidden" id="membro_avatar" value="4">
+                                            <input type="hidden" id="membro_avatar">
                                             <input type="text" class="ms-2 bg-transparent border-0 border-bottom text-white" id="membro_nome">
                                         </td>
 
@@ -74,8 +75,7 @@
                             <!-- Itera sobre a lista de To-Do e exibe os itens na tabela -->
                             <tr th:each="toDo : ${toDoList}" class="fw-normal">
                                 <th>
-                                    <img th:src="@{'http://localhost:8080/avatares/png/' + ${toDo.membro_avatar} + '.png'}"
-                                         alt="avatar 1" style="width: 45px; height: auto;" />
+                                    <img th:src="@{'http://localhost:8080/avatares/png/' + ${toDo.membro_avatar} + '.png'}" alt="avatar 1" style="width: 45px; height: auto;" />
                                     <span class="ms-2" th:text="${toDo.membro_nome}">Rivas</span>
                                 </th>
                                 <td class="align-middle" th:text="${toDo.task_nome}">/td>
