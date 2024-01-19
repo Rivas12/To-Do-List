@@ -31,15 +31,10 @@ Deleta Task por ID
 - Spring MVC
 - Thymeleaf
 
-## Acesso ao projeto
-O projeto está disponibilizado para utilização gratuita e ilimitada na url:<br>
-https://api-calculadorajuros.herokuapp.com <br>
-Podendo ser acessado pelo swagger pela url: <br>
-https://api-calculadorajuros.herokuapp.com/swagger-ui.html
 
 
 ## Abrir e rodar o projeto
-1. Para rodar o projeto basta utilizar o git clone com a url:<br>https://github.com/LagrotaGabriel/API-Calculadora-de-Juros.git
+1. Para rodar o projeto basta utilizar o git clone com a url:<br>https://github.com/Rivas12/To-Do-List.git
 2. Após sugiro que você crie um schema no mysql com o nome db "to-do"
 4. Execute o código e acesse o projeto rodando em servidor local pela url http://www.localhost:8080
 
