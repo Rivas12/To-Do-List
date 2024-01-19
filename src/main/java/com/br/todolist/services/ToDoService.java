@@ -27,4 +27,10 @@ public class ToDoService {
         return toDoRepository.save(tarefa);
     }
 
+    // Método para deletar uma tarefa no banco de dados
+    public String deleteToDo(Long id) {
+        toDoRepository.deleteById(id);
+        return "deletado";
+    }
+
 }

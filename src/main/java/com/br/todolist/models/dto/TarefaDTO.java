@@ -33,7 +33,7 @@ public class TarefaDTO {
         this.prioridade = prioridade;
     }
 
-    private String membro_nome;
+    private  String membro_nome;
     private String membro_avatar;
     private String task_nome;
     private String prioridade;
